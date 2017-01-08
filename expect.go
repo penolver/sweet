@@ -6,6 +6,7 @@ import (
 	"os"
 	"strings"
 	"time"
+	"log"
 )
 
 // Throw out everything from channel until "until" string is matched
@@ -23,6 +24,7 @@ func expectMulti(untilMulti []string, receive chan string) (string, error) {
 			if !exists {
 				return "", errors.New("Connection closed unexpectedly.")
 			}
+			log.Println("data recieved.. ",s)
 			all += s
 			for _, until := range untilMulti {
 				if strings.Contains(all, until) {
@@ -43,6 +45,7 @@ func expectSave(until string, receive chan string) (string, error) {
 			if !exists {
 				return "", errors.New("Connection closed unexpectedly.")
 			}
+			log.Println("data recieved.. ",s)
 			all += s
 		}
 	}
@@ -59,6 +62,7 @@ func expectSaveTimeout(until string, receive chan string, timeout time.Duration)
 			if !exists {
 				return "", errors.New("Connection closed unexpectedly.")
 			}
+			log.Println("data recieved.. ",s)
 			all += s
 			if strings.Contains(all, until) {
 				return all, nil

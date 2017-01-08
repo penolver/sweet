@@ -1,6 +1,9 @@
-Network device configuration backups and change alerts for the 21st century - inspired by RANCID!
+# Updates from original..
+Updating to include support for further devices and a few tweaks.
 
-See: http://gosweet.org
+# Sweet..
+
+Network device configuration backups and change alerts for the 21st century - inspired by RANCID!
 
 ##Features:
 * Stores device configs in Git
@@ -57,4 +60,3 @@ Options:
 
 ##Contributors:
 * jcollie: https://github.com/jcollie
-

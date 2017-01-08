@@ -227,6 +227,10 @@ func collectDevice(device DeviceConfig, Opts *SweetOptions) DeviceStatus {
 		c = newExternalCollector()
 	} else if device.Method == "junos" {
 		c = newJunOSCollector()
+	} else if device.Method == "fortios" {
+		c = newFortiOSCollector()
+	}else if device.Method == "unix" {
+		c = newUnixCollector()
 	} else {
 		status.State = StateError
 		status.ErrorMessage = fmt.Sprintf("Unknown access method: %s", device.Method)
